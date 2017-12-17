@@ -2,7 +2,7 @@ console.log('//--- js ok ---\\\\');
 //var v1 = document.getElementById('divTeste');
 //console.log(v1.innerHTML);
 
-var d1 = document.getElementById('divString');
+/*var d1 = document.getElementById('divString');
 
 var palavra = 'palavra ou frase';
 var palavraDT = typeof(palavra); //--string
@@ -38,4 +38,21 @@ console.log(vetorDT)
 
 var v2 = 'teste, uma frase de teste.';
  console.log(v2.substr(7, 3));    //--uma
- console.log(v2.substring(7, 16)); //--uma frase
+ console.log(v2.substring(7, 16)); //--uma frase*/
+
+ var teste = 'ok';
+if(isNaN(teste))
+ console.log('não é um número')
+else
+ console.log('é um número')
+
+ var v1 = 12.7; 
+console.log(v1.toFixed(2)) //--12.70
+
+var v2 = new Number(2);
+console.log(typeof(v2))           //--object
+console.log(typeof(v2.valueOf())) //--number
+
+var v3 = 12.8;
+var v4 = parseInt(v3);
+console.log(v4)

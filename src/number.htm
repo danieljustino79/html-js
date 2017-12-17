@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Number</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container-fluid">
+    <h1>Number</h1>
+    <hr>
+
+    numero primitivo, new Number(), decimal e hexa.
+    <pre>var numero = 123;
+var numeroDT = typeof(numero); //--number
+var numeroObjeto = new Number(456);
+var numeroObjetoDT = typeof(numeroObjeto); //--object
+
+var decimal = 10.45;
+var decimalDT = typeof(decimal); //--number
+
+var hexa = 0xFF; 
+var hexaDT = typeof(hexa); //--number</pre>
+<hr>
+
+<p>principais métodos e metodo nativo:<br>
+toFixed(precision) - arrendodamento e preenchimento<br>
+valueOf() - retorna o numero de um objeto<br>
+parseInt() - decimal para inteiro</p>
+    
+        <pre>var teste = 'ok';
+if(isNaN(teste))
+ console.log('não é um número isNaN (metodo nativo Not-a-Number)')
+else
+ console.log('é um número')
+
+ var v1 = 12.7; 
+console.log(v1.toFixed(2)) //--12.70
+
+var v2 = new Number(2);
+console.log(typeof(v2))           //--object
+console.log(typeof(v2.valueOf())) //--number
+
+var v3 = 12.8;
+var v4 = parseInt(v3);
+console.log(v4) //--12</pre>
+  </body>
+  <script src="js/app-html-js.js"></script>
+</html>
