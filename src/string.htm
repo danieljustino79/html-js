@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>String</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container-fluid">
+    <h1>String</h1>
+    <hr>
+    teste de interação entre o Html e o Js (importado do arquivo js/app-html-js.js)
+    <br>
+    <div id='divTeste' class="label label-danger">div id == divTeste</div>
+    <pre>      
+console.log('//--- js ok ---\\\\');
+var v1 = document.getElementById('divTeste');
+console.log(v1.innerHTML);
+    </pre>  
+    <hr>
+
+    string primitiva, new String(), typeof, operador == toString() e outros tipos.
+    <br>
+    <div id='divString' class="label label-danger">texto da divString</div>
+    <pre>var palavra = 'palavra ou frase';
+var palavraDT = typeof(palavra); //--string
+
+var palavraObjeto = new String('palavra2');
+var palavraObjetoDT = typeof(palavraObjeto); //--object
+
+
+var str = new String('ok');
+if('ok' == str)
+ console.log('string semelhantes *')
+else 
+ console.log('string diferentes 1')
+  
+if('ok' === str)
+ console.log('string iguais')
+else 
+ console.log('string diferentes 2 *')
+
+ if('ok' === str.toString())
+ console.log('string com o mesmo valor *')
+else 
+ console.log('string diferentes 3')
+ </pre>
+ <hr>
+ Outros tipos
+ <pre>var nulo = null;
+var nuloDataType = typeof(nulo); //--null
+var indefinido;
+var indefinidoDT = typeof(indefinido); //--undefined
+
+var vetor = [];
+var objeto = {};        
+var vetorDT = typeof(vetor);   //--object
+var objetoDT = typeof(objeto); //--object</pre>
+<hr>
+
+<p>principais métodos:<br>
+indexOf(search) - começa de 0 e é case sensitive<br>
+split(separator) - retorna um array<br>
+substr(start, length) - retorna um intervalo de uma posição + uma quantidade<br>
+substring(start, end) - retorna um intervalo da posição 1 ate a posição 2<br>
+toLowerCase(), toUpperCase(), trim(), lastIndexOf()</p>
+    
+    <pre>
+ var v1 = 'ok Google'; 
+ console.log(v1.length) //--9
+
+ var pos = v1.indexOf('G');
+ console.log(pos) //--3
+ var pos2 = v1.indexOf('g');
+ console.log(pos2) //--6
+
+ var vet = 'um;array;sera;criado'.split(';');
+ console.log(vet.toString()+' de tamanho: '+vet.length) //--4
+
+ var v2 = 'teste, uma frase de teste.';
+ console.log(v2.substr(7, 3));    //--uma (soma)
+ console.log(v2.substring(7, 16)); //--uma frase (posicao absoluta)
+</pre>
+<hr>
+
+<p>Util</p>
+<pre>
+ function IsUndefinedOrNullOrEmpty(str) {
+    if (typeof (str) === 'undefined')
+        return true;
+    else if (str == null)
+        return true;
+    else if ((str.trim()).length == 0)
+        return true;
+    else return false;
+}
+
+var teste;
+teste = null;
+teste = '';
+teste = ' ';
+if(IsUndefinedOrNullOrEmpty(teste))
+console.log('UndefinedOrNullOrEmpty');
+else
+console.log('falha');</pre>
+  </body>
+  <script src="js/app-html-js.js"></script>
+</html>
