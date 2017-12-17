@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Array</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container-fluid">
+    <h1>Array</h1>
+    <hr>
+array primitivo, new Array(), Array.isArray(), forEach(func, this), array de objetos
+    <pre>var vet = []; //--primitivo executa mais rápido
+var vetDT =  typeof(vet); //--object
+console.log(vetDT)        
+console.log(Array.isArray(vet)) //--true
+
+var vet2 = [10, 20, 50];    
+var vet2DT =  typeof(vet2); //--object
+console.log(vet2.lenght) //---3
+
+var vet3 = new Array(10, 20, 50);
+var vet3DT =  typeof(vet3); //--object
+var nro = '';
+vet3.forEach(function(item) {
+    nro += item;
+}, this);
+console.log(nro) //---102050
+
+var vet4 = [{campo1:'Sam', campo2:1}, {campo1:'Ana', campo2:2}];
+var vet4DT =  typeof(vet4); //--object
+var nomeNumero = '';
+for(i=0; i&lt;vet4.length; i++)
+ nomeNumero += vet4[i].campo1 + '-' + vet4[i].campo2 + ';';
+
+console.log(nomeNumero); //--Sam-1;Ana-2; 
+</pre>
+<hr>
+
+<p>métodos basico-1:<br>
+length - númenro de posições do array<br>
+toString() - escreve o array separado por virgula<br>
+join() - escreve o array separado pelo parametro<br>
+new String() .split() - transforma string para array</p>
+<pre>
+var vetor = [10, 20, 30];    
+
+var resultado = '';
+for(var i=0; i&lt;vetor.length; i++)
+ resultado += vetor[i] + ';';
+console.log(resultado) //---10;20;30;
+
+console.log(vetor.toString()) //---10,20,30
+
+console.log(vetor.join(' | ')) //---10 | 20 | 30
+
+var str = 'ana|sam|dan';
+var lista = str.split('|');
+console.log(lista.toString()) //--ana,sam,dan
+</pre>
+<hr>
+
+<p>métodos basico-2:<br>
+push() - adicionar na última posição<br>
+unshift() - adiciona na 1º posição<br><br>
+
+splice(posicao)	remove elementos a partir da posição<br><br>
+
+pop() - remove a última posição e retorna o conteúdo<br>
+shift() - remove a 1º posição<br><br>
+
+concat()	Joins two arrays, and returns a copy<br>
+indexOf()	Search the array for an element and returns its position<br>
+lastIndexOf()	Search the array for an element, starting at the end, and returns its position<br>
+slice()	Selects a part of an array, and returns the new array<br>
+<br>
+
+</p>
+<pre></pre>
+<hr>
+
+<p>métodos avançados:<br>
+find(), findIndex(), reverse(), sort(), fonte:<a href="https://www.w3schools.com/js/js_array_sort.asp"> js_array_sort</a><br> 
+filter(), map(), reduce()
+<pre></pre>
+  </body>
+  <script src="js/app-html-js.js"></script>
+</html>
