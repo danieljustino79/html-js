@@ -62,7 +62,7 @@ var v4 = parseInt(v3);
 console.log(v4)*/
 
 
-//ARRAY
+/*//ARRAY
 var vet = []; //--primitivo executa mais rápido
 var vetDT =  typeof(vet); //--object
 console.log(vetDT)        
@@ -120,5 +120,38 @@ console.log(vet3.toString())
 vet3.pop();
 console.log(vet3.toString())
 vet3.shift();
-console.log(vet3.toString())
+console.log(vet3.toString())*/
+
+/*//OBJECT
+var d2 = { campo1: 'valorA', campo2: 'valorB' };
+console.log(d2.campo2)
+
+var d2 = { campo1: 'valorA', campo2: 'valorB', campo3: 'valorC' };
+console.log(d2.campo1)
+console.log(d2['campo2'])
+
+var campos = Object.keys(d2);
+console.log(campos)
+
+for(var i=0; i<campos.length; i++)
+ console.log(campos[i])*/
+
+ //JQUERY
+ $(document).ready(function(){
+  $('#texto1').text('valor *')
+  $('.classe1').text('valor **')
+  $('#txt1').val('valor ***')
+
+  document.getElementById('texto2').innerText = 'valor JS +'
+  document.getElementById('t2').innerHTML = '<b>valor JS ++ negrito</b>'
+  document.getElementById('txt2').value = 'valor JS +++'
+
+  var v = $('#p1').prop('class');
+  console.log(v)
+  var v2 = $('#p1').attr('codigo');
+  console.log(v2)
+  var v3 = $('#p1').data('informacao');
+  console.log(v3)
+
+});
 

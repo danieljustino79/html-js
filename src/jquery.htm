@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Jquery</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container-fluid">
+    <h1>Jquery</h1>
+    <hr>
+$(document).ready e version
+<pre>$(document).ready(function(){
+ console.log('Jquery version: ' + jQuery.fn.jquery)
+});</pre>
+<hr>
+DOM, seletor vs js (compare)
+<div class="row">
+    <div class="col-md-6 col-xs-6">
+        <pre>&lt;p id='texto1'&gt;&lt;/p&gt;
+&lt;p class='classe1'&gt;&lt;/p&gt;
+&lt;input id='txt1' type='text'&gt;
+
+$('#texto1').text('valor *');
+$('.classe1').text('valor **');
+$('#txt1').val('valor ***');
+$('textarea').val('valor ****');
+</pre>
+<p id='texto1'></p>
+<p class='classe1'></p>
+<input id='txt1' type='text' >
+<textarea rows="3"></textarea>
+    </div>
+    <div class="col-md-6 col-xs-6">
+        <pre>&lt;p id='texto2'&gt;&lt;/p&gt;
+&lt;p class='classe2'&gt;&lt;/p&gt;
+&lt;input id='txt2' type='text'&gt;
+
+document.getElementById('texto2').innerText = 'valor JS +'
+document.getElementById('t2').innerHTML = '&lt;b&gt;valor JS ++ negrito&lt;/b&gt;'
+document.getElementById('txt2').value = 'valor JS +++'
+</pre>
+<p id='texto2'></p>
+<p id='t2'></p>
+<input id='txt2' type='text'>
+    </div>
+</div>
+<hr>
+
+prop vs attr, data()
+<pre>&lt;p id="p1" class="classe-x" codigo="atributoDefinido" data-informacao="ok Google"&gt;&lt;/p&gt;
+
+$('#p1').prop('class'); //--somente propriedades reconhecidas
+$('#p1').attr('codigo'); //--atributos declarados e propriedades
+$('#p1').data('informacao'); //--acesso jquery</pre>
+<p id="p1" class="classe-x" codigo="atributoDefinido" data-informacao="ok Google"></p>
+<hr>
+event
+
+
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src='js/app-html-js.js'>
+  </script>
+</html>

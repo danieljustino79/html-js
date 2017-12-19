@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Object</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container-fluid">
+    <h1>Object</h1>
+    <hr>
+object primitivo, prototype e new Object()
+    <pre>var obj = {}; //--primitivo executa mais rápido
+var objDT =  typeof(obj); //--object    
+
+var obj2 = { campo1: 'info1', campo2: 'info2' };
+var objIdentado = {
+    nome: 'Dan',
+    sobreNome: 'Silva'
+};
+
+var obj3 = {};
+obj3.nome = 'Sam';
+obj3.idade = 19;
+
+var obj3 = new Object();
+obj3.nome = 'Dan';
+obj3.idade = 18;
+</pre>
+<hr>
+
+acesso por campo, acesso por vetor/string, Object.keys()
+<pre>var d2 = { campo1: 'valorA', campo2: 'valorB', campo3: 'valorC' };
+console.log(d2.campo1)
+console.log(d2['campo2'])
+
+var campos = Object.keys(d2);
+for(var i=0; i < campos.length; i++)
+ console.log(campos[i])
+</pre>
+<hr>
+
+Construtor
+<pre>function UsuarioVM(_nome, _sobrenome, _idade){
+  this.Nome = _nome;
+  this.Sobrenome = _sobrenome;
+  this.Idade = _idade;
+ }
+
+ var usuarioVM = new UsuarioVM('Sam', 'Yan', 20);</pre>
+<hr>
+
+  </body>
+  <script src="js/app-html-js.js"></script>
+</html>
