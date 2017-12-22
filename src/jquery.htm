@@ -58,9 +58,88 @@ $('#p1').attr('codigo'); //--atributos declarados e propriedades
 $('#p1').data('informacao'); //--acesso jquery</pre>
 <p id="p1" class="classe-x" codigo="atributoDefinido" data-informacao="ok Google"></p>
 <hr>
+
+css()
+<pre>&lt;div id="divEstilo"&gt;div 1&lt;/div&gt;
+&lt;div style="width:50%; border:solid 1px red;"&gt;div 2 (style)&lt;/div&gt;
+
+$('#divEstilo').css('width', '50%').css('border', '1px solid blue');</pre>
+<div id="divEstilo">div 1</div>
+<div style="width:50%; border:solid 1px red;">div 2 (style)</div>
+<hr>
+
+<style>
+  .classeCor1{
+    background-color: aqua;
+    padding: 10px;
+  }
+  .classeCor2{
+    background-color:coral;
+    padding: 10px;
+  }
+</style>
+addClass(), removeClass(), toggleClass() e hasClass()
+<pre>$('#divClasse').addClass('classeCor1');
+$('#divClasse').removeClass('classeCor1');
+$('#divClasse2').toggleClass('classeCor2');</pre>
+<button id="btnAdd">Adiciona Classe</button>
+<button id="btnRem">Remove Classe</button>
+<button id="btnAlt">Alterna Classe</button>
+<div id="divClasse">div 3</div>
+<div id="divClasse2">div 4</div>
+<hr>
+
+show/hide, toggle()
+<pre></pre>
+<div id="divAlterna">div Alternada</div>
+<hr>
+
+<ul>
+  <li>10</li>
+  <li>20</li>
+  <li>50</li>
+</ul>
+.each()
+<div class="row">
+<div class="col-md-6 col-xs-6">
+    <pre>$('li').each(function(index, elementoHtml){
+    console.log(index+' - '+elementoHtml.innerText)
+    console.log('this:'+$(this).text())
+});</pre>
+</div>
+<div class="col-md-6 col-xs-6">
+    <pre>var vet = [10, 20, 50];    
+for(var i=0; i &lt; vet.length; i++)
+  console.log('for:'+vet[i])
+
+vet.forEach(function(item) {
+  console.log('forEach:'+item)
+}, this);</pre>
+</div>
+</div>
+<hr>
+
 event
+.on(), click(), .keypress(), .change(), .blur(), .submit(), event.preventDefault()
+$( "#dataTable tbody tr" ).on( "click", function() {
+  console.log( $( this ).text() );
+});
+
+function notify() {
+  alert( "clicked" );
+}
+$( "button" ).on( "click", notify );
+
+$( "#target" ).click(function() {
+  alert( "Handler for .click() called." );
+});
+
+$( "a" ).click(function( event ) {
+  event.preventDefault();
+});
 
 
+ajax
   </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src='js/app-html-js.js'>

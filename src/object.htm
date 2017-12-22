@@ -32,10 +32,13 @@ obj3.idade = 18;
 </pre>
 <hr>
 
-acesso por campo, acesso por vetor/string, Object.keys()
+acesso por campo, acesso por vetor/string, for in object, Object.keys()
 <pre>var d2 = { campo1: 'valorA', campo2: 'valorB', campo3: 'valorC' };
 console.log(d2.campo1)
 console.log(d2['campo2'])
+
+for(var prop in d2) 
+ console.log(prop)
 
 var campos = Object.keys(d2);
 for(var i=0; i < campos.length; i++)

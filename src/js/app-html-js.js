@@ -122,7 +122,7 @@ console.log(vet3.toString())
 vet3.shift();
 console.log(vet3.toString())*/
 
-/*//OBJECT
+/* //OBJECT
 var d2 = { campo1: 'valorA', campo2: 'valorB' };
 console.log(d2.campo2)
 
@@ -134,13 +134,17 @@ var campos = Object.keys(d2);
 console.log(campos)
 
 for(var i=0; i<campos.length; i++)
- console.log(campos[i])*/
+ console.log(campos[i])
+
+for(var prop in d2) 
+ console.log(prop) */
 
  //JQUERY
  $(document).ready(function(){
   $('#texto1').text('valor *')
   $('.classe1').text('valor **')
   $('#txt1').val('valor ***')
+  $('textarea').val('valor ****');
 
   document.getElementById('texto2').innerText = 'valor JS +'
   document.getElementById('t2').innerHTML = '<b>valor JS ++ negrito</b>'
@@ -153,5 +157,29 @@ for(var i=0; i<campos.length; i++)
   var v3 = $('#p1').data('informacao');
   console.log(v3)
 
+  $('#divEstilo').css('width', '50%').css('border', '1px solid blue');
+
+  $('#btnAdd').click(function(){
+      $('#divClasse').addClass('classeCor1');
+  });
+  $('#btnRem').click(function(){
+    $('#divClasse').removeClass('classeCor1');
+});
+ $('#btnAlt').click(function(){
+    $('#divClasse2').toggleClass('classeCor2');
+}); 
+
+var vet = [10, 20, 50];    
+for(var i=0; i<vet.length; i++)
+console.log('for:'+vet[i])
+
+vet.forEach(function(item) {
+    console.log('forEach:'+item)
+}, this);
+
+$('li').each(function(index, elementoHtml){
+    console.log(index+' - '+elementoHtml.innerText)
+    console.log('this:'+$(this).text())
+});
 });
 
