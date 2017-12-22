@@ -181,5 +181,16 @@ $('li').each(function(index, elementoHtml){
     console.log(index+' - '+elementoHtml.innerText)
     console.log('this:'+$(this).text())
 });
+
+$('#btnLink').click(function(){
+    var cod = $(this).data('codigo');
+    console.log('click cod:'+cod)
+});
+
+$('#btnLink2').on('click', function(){
+    var cod = $(this).data('codigo');
+    console.log('on cod:'+cod)
+});
+      
 });
 

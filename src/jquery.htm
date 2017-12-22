@@ -110,17 +110,39 @@ show/hide, toggle()
 <div class="col-md-6 col-xs-6">
     <pre>var vet = [10, 20, 50];    
 for(var i=0; i &lt; vet.length; i++)
-  console.log('for:'+vet[i])
-
-vet.forEach(function(item) {
-  console.log('forEach:'+item)
-}, this);</pre>
+  console.log('for:'+vet[i])</pre>
 </div>
 </div>
 <hr>
 
-event
-.on(), click(), .keypress(), .change(), .blur(), .submit(), event.preventDefault()
+click(), on() <button id="btnLink" data-codigo="99">link</button>
+<button id="btnLink2" data-codigo="55">link 2</button>
+<div class="row">
+  <div class="col-md-6 col-xs-6">
+    <pre>&lt;button id="btnLink" data-codigo="99"&gt;link&lt;/button&gt;
+
+$('#btnLink').click(function(){
+  var cod = $(this).data('codigo');
+});
+
+&lt;button id="btnLink2" data-codigo="55"&gt;link&lt;/button&gt;
+
+$('#btnLink2').on('click', function(){
+  var cod = $(this).data('codigo');
+  console.log('on cod:'+cod)
+});
+    </pre>
+  </div>
+  <div class="col-md-6 col-xs-6">
+    <pre>&lt;button onclick="Redirecionar(this)" data-codigo="99"&gt;link 2&lt;/button&gt;
+    
+function Redirecionar(objeto){
+  var cod = $(objeto).data('codigo');
+  }  </pre>
+  </div>
+</div>
+<hr>
+.keypress(), .change(), .blur(), .submit(), event.preventDefault()
 $( "#dataTable tbody tr" ).on( "click", function() {
   console.log( $( this ).text() );
 });
