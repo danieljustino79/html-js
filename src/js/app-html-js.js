@@ -142,7 +142,7 @@ for(var prop in d2)
  //JQUERY
  $(document).ready(function(){
   $('#texto1').text('valor *')
-  $('.classe1').text('valor **')
+  $('.classe1').html('<b>valor **</b>')
   $('#txt1').val('valor ***')
   $('textarea').val('valor ****');
 
@@ -191,6 +191,34 @@ $('#btnLink2').on('click', function(){
     var cod = $(this).data('codigo');
     console.log('on cod:'+cod)
 });
+
+$('#linkGoogle').click(function(event){
+  event.preventDefault();
+  console.log('bloquiea o processamento do link');
+})
+
+/* $.ajax({
+    method: "GET",
+    url: "json.txt"
+  })
+    .done(function( msg ) {
+      alert( "Data Saved: " + msg );
+    }); */
+
+
+    $.ajax( { url: "https://api.mlab.com/api/1/databases/json-teste/collections/Usuario?apiKey=kV9VlolE-lhUvcvlHZNUeB1ub2i4rn_N",
+          contentType: "application/json" } )
+          .done(function( data ) {
+            console.log( "mlab: " + data );
+
+            var json = JSON.stringify(data);
+            console.log( "mlab stringify: " + json );
+
+            /* var p = JSON.parse(data);
+            console.log( "mlab parse: " + p ); */
+          });
+
+          
       
 });
 

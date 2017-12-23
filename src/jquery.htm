@@ -17,7 +17,7 @@ $(document).ready e version
  console.log('Jquery version: ' + jQuery.fn.jquery)
 });</pre>
 <hr>
-DOM, seletor vs js (compare)
+DOM seletor, text(), html, val() vs js (compare)
 <div class="row">
     <div class="col-md-6 col-xs-6">
         <pre>&lt;p id='texto1'&gt;&lt;/p&gt;
@@ -25,7 +25,7 @@ DOM, seletor vs js (compare)
 &lt;input id='txt1' type='text'&gt;
 
 $('#texto1').text('valor *');
-$('.classe1').text('valor **');
+$('.classe1').html('&lt;b&gt;valor **&lt;/b&gt;');
 $('#txt1').val('valor ***');
 $('textarea').val('valor ****');
 </pre>
@@ -115,8 +115,9 @@ for(var i=0; i &lt; vet.length; i++)
 </div>
 <hr>
 
-click(), on() <button id="btnLink" data-codigo="99">link</button>
+event click(), on(), event.preventDefault() <button id="btnLink" data-codigo="99">link</button>
 <button id="btnLink2" data-codigo="55">link 2</button>
+<a id="linkGoogle" href="https://www.google.com.br/">Google</a>
 <div class="row">
   <div class="col-md-6 col-xs-6">
     <pre>&lt;button id="btnLink" data-codigo="99"&gt;link&lt;/button&gt;
@@ -125,16 +126,21 @@ $('#btnLink').click(function(){
   var cod = $(this).data('codigo');
 });
 
-&lt;button id="btnLink2" data-codigo="55"&gt;link&lt;/button&gt;
+&lt;button id="btnLink2" data-codigo="55"&gt;link 2&lt;/button&gt;
 
 $('#btnLink2').on('click', function(){
   var cod = $(this).data('codigo');
-  console.log('on cod:'+cod)
 });
-    </pre>
+
+&lt;a id="linkGoogle" href="https://www.google.com.br/"&gt;Google&lt;/a&gt;
+
+$('#linkGoogle').click(function(event){
+  event.preventDefault(); //--bloquiea o redirecionamento do link
+})
+</pre>
   </div>
   <div class="col-md-6 col-xs-6">
-    <pre>&lt;button onclick="Redirecionar(this)" data-codigo="99"&gt;link 2&lt;/button&gt;
+    <pre>&lt;button onclick="Redirecionar(this)" data-codigo="99"&gt;link js&lt;/button&gt;
     
 function Redirecionar(objeto){
   var cod = $(objeto).data('codigo');
@@ -142,26 +148,42 @@ function Redirecionar(objeto){
   </div>
 </div>
 <hr>
-.keypress(), .change(), .blur(), .submit(), event.preventDefault()
-$( "#dataTable tbody tr" ).on( "click", function() {
-  console.log( $( this ).text() );
-});
 
-function notify() {
-  alert( "clicked" );
-}
-$( "button" ).on( "click", notify );
+.keypress(), .change(), .blur(), .submit(), 
+<pre></pre>
+<hr>
 
-$( "#target" ).click(function() {
-  alert( "Handler for .click() called." );
-});
+ajax<br>
+contentType, complete (error, success), data, done (fail, always, then), method, url, async, beforeSend
+<pre>$.ajax({
+    url: "https://mlab.com/home",
+    contentType: "application/json" 
+  })
+    .done(function( data ) {
+      console.log( "object: " + data );
+      console.log( "stringify: " + JSON.stringify(data) );
+    });</pre>
+    shorthand $.get
+    <pre>$.get( "https://mlab.com/home", function( data ) {
+        console.log( data );
+      });</pre>
+          
+Deprecation Notice: The jqXHR.success(), jqXHR.error(), and jqXHR.complete() callbacks are removed as of jQuery 3.0. You can use jqXHR.done(), jqXHR.fail(), and jqXHR.always() instead.
+<pre>var jqxhr = $.ajax( "example.php" )
+.done(function() {
+  alert( "success" );
+})
+.fail(function() {
+  alert( "error" );
+})
+.always(function() {
+  alert( "complete" );
+});</pre>
+<hr>
 
-$( "a" ).click(function( event ) {
-  event.preventDefault();
-});
-
-
-ajax
+jQuery.param(), 
+.serialize(), 
+.serializeArray()
   </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src='js/app-html-js.js'>
