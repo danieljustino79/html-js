@@ -146,11 +146,17 @@ for(var prop in d2)
   $('#txt1').val('valor ***')
   $('textarea').val('valor ****');
 
-  document.getElementById('texto2').innerText = 'valor JS +'
-  document.getElementById('t2').innerHTML = '<b>valor JS ++ negrito</b>'
-  document.getElementById('txt2').value = 'valor JS +++'
+  //document.getElementById('texto2').innerText = 'valor JS +'
+/*   document.getElementById('t2').innerHTML = '<b>valor JS ++ negrito</b>'
+  document.getElementById('txt2').value = 'valor JS +++' */
+
+  var p1 = document.getElementById('p1');
+  //document.getElementById('p1').innerText = 'valor JS +';
+  //p1.innerText = 'valor JS +';
+  console.log('p1:'+p1)
 
   var v = $('#p1').prop('class');
+  //v.text('registar a entrada, mas não da error se não existir');
   console.log(v)
   var v2 = $('#p1').attr('codigo');
   console.log(v2)
@@ -206,8 +212,25 @@ $('#linkGoogle').click(function(event){
     }); */
 
 
+  /*   $.ajax({
+        url:'https://api.mlab.com/api/1/databases/json-teste/collections/Usuario?apiKey=kV9VlolE-lhUvcvlHZNUeB1ub2i4rn_N',
+        contentType: "application/json" 
+    }).success(function(){console.log('ajajx sucess')}); */
+
+    /* $.ajax({
+        url:'https://api.mlab.com/api/1/databases/json-teste/collections/Usuario?apiKey=kV9VlolE-lhUvcvlHZNUeB1ub2i4rn_N',
+        contentType: "application/json" 
+    }).complete(function(){console.log('ajajx complete')}); */
+
+   /*  $.ajax({
+        url:'https://api.mlab.com/api/1/databases/json-teste/collections/Usuario?apiKey=kV9VlolE-lhUvcvlHZNUeB1ub2i4rn_N',
+        contentType: "application/json" 
+    }).error(function(){console.log('ajajx error')}); */
+
+
+    //---Jquery 3
     $.ajax( { url: "https://api.mlab.com/api/1/databases/json-teste/collections/Usuario?apiKey=kV9VlolE-lhUvcvlHZNUeB1ub2i4rn_N",
-          contentType: "application/json" } )
+          contentType: "application/json"  } )
           .done(function( data ) {
             console.log( "mlab: " + data );
 
@@ -217,6 +240,39 @@ $('#linkGoogle').click(function(event){
             /* var p = JSON.parse(data);
             console.log( "mlab parse: " + p ); */
           });
+
+          $.get( { url: "https://api.mlab.com/api/1/databases/json-teste/collections/Usuario?apiKey=kV9VlolE-lhUvcvlHZNUeB1ub2i4rn_N",
+          contentType: "application/json" } )
+          .done(function( data ) {
+            var json = JSON.stringify(data);
+            console.log( "mlab get shorthand: " + json );
+          });
+
+         var jsonmLab = {
+            "Id":10,
+            "nome":"Dan",
+            "sobrenome":"Just",
+            "age":25,
+            "especialista":["database","hardware",{"web":["SOA","RESTFul", ".NET", "IIS"]}],
+            "endereco":{
+            "rua": "Oliveira Lopes",
+            "numero": 999
+            }}; 
+
+            //--http://docs.mlab.com/data-api/
+
+
+
+
+            //---JSON
+            var json = [{ nome:'Sam', 'fone':9988 }, { 'nome':'Sam', 'fone':9977 }];
+          var expor = JSON.stringify(json);
+          console.log(expor);
+          console.log('n:'+expor.nome);
+
+
+
+            
 
           
       

@@ -59,7 +59,11 @@ $('#p1').data('informacao'); //--acesso jquery</pre>
 <p id="p1" class="classe-x" codigo="atributoDefinido" data-informacao="ok Google"></p>
 <hr>
 
-css()
+preappend(), append(), before(), after(), remove(), empty()
+<pre></pre>
+<hr>
+
+css(), width(), height(), innerWidth(), innerHeight(), outerWidth(), outerHeight()
 <pre>&lt;div id="divEstilo"&gt;div 1&lt;/div&gt;
 &lt;div style="width:50%; border:solid 1px red;"&gt;div 2 (style)&lt;/div&gt;
 
@@ -89,6 +93,8 @@ $('#divClasse2').toggleClass('classeCor2');</pre>
 <div id="divClasse2">div 4</div>
 <hr>
 
+
+
 show/hide, toggle()
 <pre></pre>
 <div id="divAlterna">div Alternada</div>
@@ -99,7 +105,7 @@ show/hide, toggle()
   <li>20</li>
   <li>50</li>
 </ul>
-.each()
+.each(), find(), .prev() e .next(), .siblings()
 <div class="row">
 <div class="col-md-6 col-xs-6">
     <pre>$('li').each(function(index, elementoHtml){
@@ -113,6 +119,10 @@ for(var i=0; i &lt; vet.length; i++)
   console.log('for:'+vet[i])</pre>
 </div>
 </div>
+<hr>
+
+parents(), closest()
+<pre></pre>
 <hr>
 
 event click(), on(), event.preventDefault() <button id="btnLink" data-codigo="99">link</button>
@@ -154,22 +164,23 @@ function Redirecionar(objeto){
 <hr>
 
 ajax<br>
-contentType, complete (error, success), data, done (fail, always, then), method, url, async, beforeSend
+url, contentType, data, done (fail, always, then), method:'OPTIONS' por default
 <pre>$.ajax({
-    url: "https://mlab.com/home",
+    url: "https://mlab.com",
     contentType: "application/json" 
   })
     .done(function( data ) {
       console.log( "object: " + data );
       console.log( "stringify: " + JSON.stringify(data) );
     });</pre>
-    shorthand $.get
-    <pre>$.get( "https://mlab.com/home", function( data ) {
+
+    shorthand $.get 
+    <pre>$.get( "mlab.com", function( data ) {
         console.log( data );
       });</pre>
           
-Deprecation Notice: The jqXHR.success(), jqXHR.error(), and jqXHR.complete() callbacks are removed as of jQuery 3.0. You can use jqXHR.done(), jqXHR.fail(), and jqXHR.always() instead.
-<pre>var jqxhr = $.ajax( "example.php" )
+jQuery 3.0 - jqXHR.done(), jqXHR.fail(), jqXHR.always()
+<pre>var jqxhr = $.ajax( "mlab.com" )
 .done(function() {
   alert( "success" );
 })
@@ -179,13 +190,23 @@ Deprecation Notice: The jqXHR.success(), jqXHR.error(), and jqXHR.complete() cal
 .always(function() {
   alert( "complete" );
 });</pre>
+
+Deprecation Notice: The jqXHR.success(), jqXHR.error(), jqXHR.complete()
+<pre> $.ajax({
+  url:'mlab.com'
+}).complete().error().success();</pre>
 <hr>
 
 jQuery.param(), 
 .serialize(), 
 .serializeArray()
   </body>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+
+ 
+
   <script src='js/app-html-js.js'>
   </script>
 </html>

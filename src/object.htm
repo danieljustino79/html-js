@@ -56,6 +56,33 @@ Construtor
  var usuarioVM = new UsuarioVM('Sam', 'Yan', 20);</pre>
 <hr>
 
+JSON - JavaScript Object Notation
+<pre>var json = { nome:'Sam', 'fone':9988 };
+  console.log(json.nome)    //---Sam
+  console.log(json['nome']) //---Sam
+  
+  var json = [{ 'nome':'Sam', 'fone':9988 }, { 'nome':'Dan', 'fone':9977 }];
+  console.log(json[0].nome)        //---Sam
+  console.log(Array.isArray(json)) //---true
+        </pre>
+
+        <p>JSON parse() - texto para objeto Json</p>
+        <pre>var texto = '{"nome":"Sam","fone":9988}';
+        var json = JSON.parse(texto);
+        console.log(json.fone) //---9988</pre>
+
+
+        <p>JSON stringify() valida e converte o contentType: application/json (objeto Json em formato MIME type) para texto, situação onde, Ajax recebe dados de um WebService</p>
+        <pre>var json = [{ 'nome':'Sam', 'fone':9988 }, { 'nome':'Sam', 'fone':9977 }];
+          var expor = JSON.stringify(json);
+          console.log(expor);
+
+          $.each(json, function(i, item){
+            var _nome += item.nome
+           })
+        </pre>        
+
   </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="js/app-html-js.js"></script>
 </html>
