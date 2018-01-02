@@ -28,7 +28,11 @@ var nro = '';
 vet3.forEach(function(item) {
     nro += item;
 }, this);
-console.log(nro) //---102050
+console.log(nro) //--102050
+
+nro = '';
+vet3.forEach(item => nro += item;);
+console.log(nro) //-- ???
 
 var vet4 = [{campo1:'Sam', campo2:1}, {campo1:'Ana', campo2:2}];
 var vet4DT =  typeof(vet4); //--object
